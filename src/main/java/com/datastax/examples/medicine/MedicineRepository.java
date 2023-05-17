@@ -1,4 +1,4 @@
-package com.datastax.examples.order;
+package com.datastax.examples.medicine;
 
 import org.springframework.data.cassandra.repository.CassandraRepository;
 import org.springframework.data.rest.core.annotation.RestResource;

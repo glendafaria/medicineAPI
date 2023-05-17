@@ -1,4 +1,4 @@
-package com.datastax.examples.order;
+package com.datastax.examples.medicine;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
