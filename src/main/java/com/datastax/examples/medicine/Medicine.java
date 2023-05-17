@@ -20,7 +20,7 @@ public class Medicine implements Serializable {
 
     private String name;
 
-    private Boolean active;
+    private Boolean remind;
 
     private String time;
 
