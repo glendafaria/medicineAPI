@@ -5,7 +5,7 @@ import org.springframework.data.cassandra.core.mapping.*;
 
 import java.io.Serializable;
 
-@Table(value = "medicine")
+@Table(value = "starter_orders")
 @Data
 public class Medicine implements Serializable {
 
