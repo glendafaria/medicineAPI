@@ -1,0 +1,21 @@
+package com.datastax.examples.order;
+
+import lombok.Data;
+import org.springframework.data.cassandra.core.mapping.*;
+
+import java.io.Serializable;
+
+@Table(value = "starter_orders")
+@Data
+public class Medicine implements Serializable {
+
+    @PrimaryKey
+    private Integer id;
+
+    private String name;
+
+    private Double price;
+
+    private Integer amount;
+
+}

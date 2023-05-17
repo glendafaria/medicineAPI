@@ -4,18 +4,28 @@ server.port: 8081
 
 management.server.port: 8082
 
-spring.data.cassandra:
-  keyspace-name: ${ASTRA_DB_KEYSPACE}
-  username: ${ASTRA_DB_USERNAME}
-  password: ${ASTRA_DB_PASSWORD}
-  # Create the schema on the fly if it doesn't exist
-  schema-action: CREATE_IF_NOT_EXISTS
-  # Increase timeouts when connecting to Astra from a dev workstation
-  request:
-    timeout: 10s
-  connection:
-    connect-timeout: 10s
-    init-query-timeout: 10s
-
 datastax.astra:
-  secure-connect-bundle: ${ASTRA_DB_BUNDLE}
+  secure-connect-bundle: connect.zip
+
+spring:
+  data:
+    cassandra:
+      port: 29080
+      contact-points: 28624d8c-f479-4478-8c65-5766b1858f54-us-east1.db.astra.datastax.com
+      keyspace-name: medicine
+      username: KbStxLlyBYfJRxjlqOOsZAXD
+      password: BLC3f6JQZ6q,80wOA7grrTKxoba9IJ397qdai7EnMn,iMil1kKGhWFuU2ANvChk,Ej57gGjaXz.xkHMfDfHsGqICyccU3pKcbch1BvAlfvnPf,5X,ZFcRjpQ7AghbF1G
+      schema-action: create-if-not-exists
+      request:
+        timeout: 10s
+      connection:
+        connect-timeout: 10s
+        init-query-timeout: 10s
+
+astra:
+  db:
+    id: 28624d8c-f479-4478-8c65-5766b1858f54-1
+    region: us-east1
+    keyspace: medicine
+    application:
+      token: AstraCS:KbStxLlyBYfJRxjlqOOsZAXD:2554b77c6469bb9a5d7798e55f1fd2238e8cd1ac6e2112967121bd08c9b1e92f
