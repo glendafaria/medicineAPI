@@ -12,10 +12,16 @@ public class Medicine implements Serializable {
     @PrimaryKey
     private Integer id;
 
+    private Integer dose;
+
+    private String frequency;
+
+    private String unity;
+
     private String name;
 
-    private Double price;
+    private Boolean active;
 
-    private Integer amount;
+    private String time;
 
 }
