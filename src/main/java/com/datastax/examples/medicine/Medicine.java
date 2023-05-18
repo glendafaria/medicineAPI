@@ -3,6 +3,7 @@ package com.datastax.examples.medicine;
 import lombok.Data;
 import org.springframework.data.cassandra.core.mapping.*;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import java.io.Serializable;
@@ -25,5 +26,7 @@ public class Medicine implements Serializable {
     private Boolean remind;
 
     private String time;
+
+    private LocalDateTime dateTime;
 
 }

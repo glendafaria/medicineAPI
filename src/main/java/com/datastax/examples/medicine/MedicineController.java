@@ -3,6 +3,7 @@ package com.datastax.examples.medicine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -28,12 +29,14 @@ public class MedicineController {
     public Medicine create(@RequestBody Medicine medicine) {
         UUID id = UUID.randomUUID();
         medicine.setId(id);
+        medicine.setDateTime(LocalDateTime.now());
         return medicineRepository.save(medicine);
     }
 
     @PutMapping("/{id}")
     public Optional<Medicine> updateMedicine(@RequestBody Medicine medicine, @PathVariable UUID id) {
         medicine.setId(id);
+        medicine.setDateTime(LocalDateTime.now());
         return Optional.of(medicineRepository.save(medicine));
     }
 
