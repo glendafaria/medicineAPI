@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/medicines")
@@ -14,7 +15,7 @@ public class MedicineController {
     private MedicineRepository medicineRepository;
 
     @GetMapping("/{id}")
-    public Optional<Medicine> getMedicine(@PathVariable Integer id) {
+    public Optional<Medicine> getMedicine(@PathVariable UUID id) {
         return medicineRepository.findById(id);
     }
 
@@ -24,19 +25,20 @@ public class MedicineController {
     }
 
     @PostMapping
-    public Medicine create(@RequestBody Medicine medicine){
+    public Medicine create(@RequestBody Medicine medicine) {
+        UUID id = UUID.randomUUID();
+        medicine.setId(id);
         return medicineRepository.save(medicine);
     }
 
     @PutMapping("/{id}")
-    public Optional<Medicine> updateMedicine(@RequestBody Medicine medicine, @PathVariable Integer id) {
+    public Optional<Medicine> updateMedicine(@RequestBody Medicine medicine, @PathVariable UUID id) {
         medicine.setId(id);
         return Optional.of(medicineRepository.save(medicine));
     }
 
     @DeleteMapping("/{id}")
-    public void deleteMedicine(@PathVariable Integer id) {
+    public void deleteMedicine(@PathVariable UUID id) {
         medicineRepository.deleteById(id);
     }
-
 }

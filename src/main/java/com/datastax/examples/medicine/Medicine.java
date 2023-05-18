@@ -3,6 +3,8 @@ package com.datastax.examples.medicine;
 import lombok.Data;
 import org.springframework.data.cassandra.core.mapping.*;
 
+import java.util.UUID;
+
 import java.io.Serializable;
 
 @Table(value = "starter_orders")
@@ -10,7 +12,7 @@ import java.io.Serializable;
 public class Medicine implements Serializable {
 
     @PrimaryKey
-    private Integer id;
+    private UUID id;
 
     private Integer dose;
 
