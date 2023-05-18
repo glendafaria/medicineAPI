@@ -7,7 +7,7 @@ import java.util.UUID;
 
 import java.io.Serializable;
 
-@Table(value = "starter_orders")
+@Table(value = "medicine_table")
 @Data
 public class Medicine implements Serializable {
 
