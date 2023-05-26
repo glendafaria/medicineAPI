@@ -9,7 +9,5 @@ import java.util.UUID;
 @Repository
 @RestResource(exported = false)
 public interface MedicineRepository extends CassandraRepository<Medicine, UUID> {
-
-
 }
 
